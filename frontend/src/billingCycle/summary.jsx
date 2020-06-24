@@ -9,6 +9,7 @@ export default ({ credit, debt}) => (
         <fieldset>
             <legend>Resumo</legend>
             <Row>
+            
                 <ValueBox cols='12 4' color='green' icon='bank'
                     value={`R$ ${credit}`} text='Total de Créditos' />
                 <ValueBox cols='12 4' color='red' icon='credit-card'
