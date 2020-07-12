@@ -9,17 +9,17 @@ module.exports = {
     },
     devServer: {
         port: 8080,
-        contentBase: './public'
+        contentBase: './public',
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
         alias: {
             modules: __dirname + '/node_modules',
-            jquery: 'modules/admin-lte/plugins/JQuery/jquery-2.2.3.min.js',
-            bootstrap: 'modules/admnin-lte/bootstrap/js/bootstrap.js'
+            jquery: 'modules/admin-lte/plugins/jQuery/jquery-2.2.3.min.js',
+            bootstrap: 'modules/admin-lte/bootstrap/js/bootstrap.js'
         }
     },
-    plugins: [
+    plugins: [ 
         new webpack.ProvidePlugin({
             $: 'jquery',
             jQuery: 'jquery',
@@ -29,14 +29,14 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            teste: /.js[x]?$/,
+            test: /.js[x]?$/,
             loader: 'babel-loader',
-            exclude: '/node_modules/',
+            exclude: /node_modules/,
             query: {
                 presets: ['es2015', 'react'],
                 plugins: ['transform-object-rest-spread']
             }
-        },{
+        }, {
             test: /\.css$/,
             loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
         }, {
